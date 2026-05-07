@@ -7,6 +7,7 @@
 # reboot: yes
 # nocontainer
 # repo: https://github.com/CheariX/silverblue-akmods-keys
+# new
 
 # --- Start of the script code ---
 source "$SCRIPT_DIR/libs/linuxtoys.lib"

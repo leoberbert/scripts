@@ -4,6 +4,7 @@
 # icon: peripherals.svg
 # reboot: yes
 # nocontainer
+# new
 
 source "$SCRIPT_DIR/libs/linuxtoys.lib"
 _lang_

@@ -2,6 +2,7 @@
 # name: RClone Google Drive
 # description: rgdrive_desc
 # icon: rgdrive.svg
+# new
 
 source "$SCRIPT_DIR/libs/linuxtoys.lib"
 

@@ -4,6 +4,7 @@
 # icon: preload.svg
 # compat: ubuntu, debian, arch, fedora, ostree
 # nocontainer
+# new
 
 # --- Start of the script code ---
 source "$SCRIPT_DIR/libs/optimizers.lib"

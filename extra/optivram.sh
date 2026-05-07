@@ -4,6 +4,7 @@
 # icon: device.svg
 # compat: fedora, arch
 # gpu: Intel, AMD
+# new
 
 source "$SCRIPT_DIR/libs/linuxtoys.lib"
 _lang_
