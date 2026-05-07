@@ -34,7 +34,7 @@ create_swap () {
         echo "# swapfile" | sudo tee -a /etc/fstab
         echo "$location/swap/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
         fix_selinux_context "$location/swap/swapfile"
-        swap_created btrfs "$location/swap/swapfile"
+        swapfile_created btrfs "$location/swap/swapfile"
         zeninf "Swapfile creation successful."
         return 0
     else
@@ -44,7 +44,7 @@ create_swap () {
         echo "# swapfile" | sudo tee -a /etc/fstab
         echo "$location/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
         fix_selinux_context "$location/swapfile"
-        swap_created regular "$location/swapfile"
+        swapfile_created regular "$location/swapfile"
         zeninf "Swapfile creation successful."
         return 0
     fi
