@@ -77,8 +77,8 @@ elif is_suse; then
     fi
     sudo zypper dup -y || fatal "Failed to upgrade packages"
 elif is_solus; then
-    sudo eopkg rmo -y || fatal "Failed to remove orphaned packages"
-    sudo eopkg up -y || fatal "Failed to upgrade packages"
+    { [ "$UPD_SERVICE" = "1" ] && eopkg rmo -y; } || sudo eopkg rmo -y || fatal "Failed to remove orphaned packages"
+    { [ "$UPD_SERVICE" = "1" ] && eopkg up -y; } || sudo eopkg up -y || fatal "Failed to upgrade packages"
 fi
 if which flatpak &> /dev/null; then
     { [ "$UPD_SERVICE" = "1" ] && flatpak uninstall --system --unused --delete-data -y; } || flatpak uninstall --unused --delete-data -y || fatal "Failed to remove orphaned flatpak packages"
