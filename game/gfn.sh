@@ -11,4 +11,5 @@ _lang_
 pkg_flat org.freedesktop.Sdk//24.08
 flatpak remote-add --system --if-not-exists GeForceNOW https://international.download.nvidia.com/GFNLinux/flatpak/geforcenow.flatpakrepo
 flatpak install --or-update --system --noninteractive GeForceNOW com.nvidia.geforcenow
+_append_transmap "flatpak com.nvidia.geforcenow"
 flatpak override --system --nosocket=wayland com.nvidia.geforcenow
