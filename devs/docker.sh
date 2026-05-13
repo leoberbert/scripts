@@ -5,6 +5,7 @@
 # icon: docker.svg
 # nocontainer
 # reboot: yes
+# compat: !ublue
 
 # --- Start of the script code ---
 source "$SCRIPT_DIR/libs/linuxtoys.lib"
