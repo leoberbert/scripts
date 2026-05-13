@@ -136,7 +136,7 @@ davinciboxatom () {
         pkg_install toolbox podman lshw
         if is_nvidia; then
             pkg_install curl
-			curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | \
+			curl -s -L -k https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | \
   				sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
             pkg_install nvidia-container-toolkit nvidia-container-toolkit-base libnvidia-container-tools libnvidia-container1
         fi
