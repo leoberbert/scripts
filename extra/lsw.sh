@@ -5,6 +5,7 @@
 # icon: lsw.svg
 # reboot: yes
 # nocontainer
+# compat: !ublue
 # repo: https://github.com/TibixDev/winboat
 
 # --- Start of the script code ---
