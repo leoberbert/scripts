@@ -166,6 +166,7 @@ davinciboxatom () {
         fi
         cd $HOME
         sudo rm -rf davincibox #cleanup
+        zeninf "$finishmsg"
     }
 
 	while true; do

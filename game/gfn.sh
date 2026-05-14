@@ -14,3 +14,4 @@ sudo_rq
 { flatpak install --or-update --system --noninteractive GeForceNOW com.nvidia.geforcenow || sudo flatpak install --or-update --system --noninteractive GeForceNOW com.nvidia.geforcenow; } || fatal "Failed to install GeForce NOW Flatpak."
 _append_transmap "flatpak com.nvidia.geforcenow"
 flatpak override --system --nosocket=wayland com.nvidia.geforcenow || sudo flatpak override --system --nosocket=wayland com.nvidia.geforcenow
+zeninf "$finishmsg"
