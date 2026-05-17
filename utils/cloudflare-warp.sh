@@ -32,6 +32,7 @@ elif is_fedora || is_ostree || is_rhel; then
     # Add cloudflare-warp.repo to /etc/yum.repos.d/
     curl -fsSL https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo
     if is_rhel; then
+        summon_helpers
         rpmfusion_chk
     fi
     sudo dnf copr enable mlampe/webkit2gtk3 rhel+epel-10-x86_64
