@@ -20,7 +20,7 @@ PKG_URL="$(curl -fsSL 'https://data.services.jetbrains.com/products/releases?cod
 TEMP_EXTRACT="$(mktemp -d)" || { exit 1; }
 trap "rm -rf '$TEMP_EXTRACT'" EXIT
 
-curl -fsSL "${PKG_URL}" | tar -xzf - --strip-components=2 --one-top-level="$TEMP_EXTRACT" && \
+curl -fsSL "${PKG_URL}" | tar -xzf - -C "$TEMP_EXTRACT" --strip-components=2 && \
 	cp -r "$TEMP_EXTRACT"/* "${PKG_DIR}/" && {
 	(
 		## .desktop file
