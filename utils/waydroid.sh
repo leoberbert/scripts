@@ -7,6 +7,7 @@
 # nocontainer
 # gpu: Amd, Intel
 # repo: https://waydro.id/
+# systemd: yes
 
 # --- Start of the script code ---
 source "$SCRIPT_DIR/libs/helpers.lib"

@@ -7,6 +7,7 @@
 # nocontainer
 # compat: !ublue
 # repo: https://github.com/TibixDev/winboat
+# systemd: yes
 
 # --- Start of the script code ---
 source "$SCRIPT_DIR/libs/helpers.lib"
