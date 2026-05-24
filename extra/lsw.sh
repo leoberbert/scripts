@@ -27,6 +27,7 @@ docker_in () { # install docker
             sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
         sudo apt update
     elif is_debian; then
+        { [ "$VERSION_CODENAME" != "trixie" ] && [ "$VERSION_CODENAME" != "bookworm" ]; } && DEB_CODENAME="trixie" || DEB_CODENAME="$VERSION_CODENAME"
         sudo apt install -y ca-certificates # should not be declared as its removal may break the OS
         sudo install -m 0755 -d /etc/apt/keyrings
         sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
@@ -34,7 +35,7 @@ docker_in () { # install docker
         sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
 Types: deb
 URIs: https://download.docker.com/linux/debian
-Suites: $(. /etc/os-release && echo "${VERSION_CODENAME:-trixie}")
+Suites: $(. /etc/os-release && echo "${DEB_CODENAME}")
 Components: stable
 Architectures: $(dpkg --print-architecture)
 Signed-By: /etc/apt/keyrings/docker.asc
