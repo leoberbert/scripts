@@ -13,6 +13,7 @@ if zenity --question --text "$msg253" --width 360 --height 300; then
     zeninf "$msg254"
     flatpak run org.gimp.GIMP --batch-interpreter=plug-in-script-fu-eval -b "(gimp-quit 0)" && {
         prep_dir_edit "$HOME/.config/GIMP" "$HOME/.local/share/applications"
+        rm -rf /tmp/photogimp
         git clone --depth=1 https://github.com/Diolinux/PhotoGIMP.git /tmp/photogimp && {
             (
                 copy_ -rvf /tmp/photogimp/.config/* ~/.config/ && copy_ -rvf /tmp/photogimp/.local/* ~/.local/
