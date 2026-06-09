@@ -25,6 +25,7 @@ if sudo mokutil --sb-state | grep -q "SecureBoot enabled"; then
         cd silverblue-akmods-keys
         sudo bash setup.sh
         pkg_fromfile akmods-keys-0.0.2-8.fc$(rpm -E %fedora).noarch.rpm
+        zenwrn "$msgostreepending" && exit 0
     fi
 fi
 pkg_install xorg-x11-drv-nvidia-470xx akmod-nvidia-470xx xorg-x11-drv-nvidia-470xx-cuda
