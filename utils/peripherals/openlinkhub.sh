@@ -4,7 +4,7 @@
 # description: openlinkhub_desc
 # icon: corsair.svg
 # repo: https://github.com/jurkovic-nikola/OpenLinkHub
-# compat: ubuntu, debian, fedora, ostree, ublue, arch, cachy
+# compat: ubuntu, debian, fedora, ostree, ublue, arch, cachy, rhel
 
 # --- Start of the script code ---
 source "$SCRIPT_DIR/libs/linuxtoys.lib"
@@ -31,6 +31,8 @@ elif is_ostree; then
 elif is_fedora; then
     sudo dnf copr enable jurkovic-nikola/OpenLinkHub
     pkg_install OpenLinkHub
+elif is_rhel; then
+    curl -fsSL https://raw.githubusercontent.com/jurkovic-nikola/OpenLinkHub/main/remote-install.sh | bash
 elif is_arch || is_cachy; then
     pkg_install openlinkhub-bin
 fi
