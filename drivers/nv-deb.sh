@@ -13,9 +13,15 @@ source "$SCRIPT_DIR/libs/linuxtoys.lib"
 _lang_
 sudo_rq
 prep_tmp
-pkg_install gcc lsb-release software-properties-common
+pkg_install gcc lsb-release 
+if [ -f /etc/apt/sources.list.d/debian.sources ]; then
+    sudo sed -i 's/^Components: \(.*\)main$/Components: \1main contrib non-free/' /etc/apt/sources.list.d/debian.sources
+ else
+    sudo sed -i 's/^deb http:\/\/\([^ ]*\) \([^ ]*\) main$/deb http:\/\/\1 \2 main contrib non-free/' /etc/apt/sources.list
+    sudo sed -i 's/^deb-src http:\/\/\([^ ]*\) \([^ ]*\) main$/deb-src http:\/\/\1 \2 main contrib non-free/' /etc/apt/sources.list
+fi
+sudo apt update
 debian_ver=$(lsb_release -rs 2>/dev/null)
-sudo add-apt-repository contrib
 wget "https://developer.download.nvidia.com/compute/cuda/repos/debian$debian_ver/x86_64/cuda-keyring_1.1-1_all.deb"
 pkg_fromfile cuda-keyring_1.1-1_all.deb
 sleep 1
