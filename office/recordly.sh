@@ -3,6 +3,7 @@
 # description: recordly_desc
 # icon: recordly.png
 # repo: https://recordly.dev
+# new
 
 source "$SCRIPT_DIR/libs/linuxtoys.lib"
 _lang_
